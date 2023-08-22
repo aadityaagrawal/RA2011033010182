@@ -40,7 +40,7 @@ function displayTrainData(trainData) {
     const trainList = document.querySelector('.train-list');
 
     trainData.sort((a, b) => {
-        // Sort by price (ascending), seats available (descending), and departure time (descending)
+        
         return a.price.sleeper - b.price.sleeper ||
                b.seatsAvailable.sleeper - a.seatsAvailable.sleeper ||
                (b.departureTime.Hours * 60 + b.departureTime.Minutes) -
@@ -50,6 +50,7 @@ function displayTrainData(trainData) {
     trainData.forEach(train => {
         const trainCard = document.createElement('div');
         trainCard.classList.add('train-card');
+        
 
         trainCard.innerHTML = `
             <h2>${train.trainName}</h2>
